@@ -20,8 +20,8 @@ function initiate() {
   document.addEventListener("keydown", keyDown, false);
   document.addEventListener("keyup", keyUp, false);
 
-//This section is for the number of alien enemies per row.
-//First row.
+  //This section is for the number of alien enemies per row.
+  //First row.
   for (var i = 0; i < 7; i++) {
     imgEnemy.src = "images/aliens3.png";
     var enemy = new GameObject(i * 70 + 75, 20, myCanvasGame, 1, imgEnemy);
@@ -145,7 +145,7 @@ function gameLoop() {
     currentBullet.update();
   }
 
-//This Updates the games score.
+  //This Updates the games score.
   var output = document.getElementById("output");
   output.innerHTML = "Your score: " + score;
 }
@@ -252,13 +252,56 @@ function createEnemyBullets(enemy) {
   this.xcord = x;
   var imgEnemy = new Image();
   var enemyBullets = new GameObject();
-  for(i = 0; i <= -1; i++){
-    return enemyBullets;
-  }
+
   return imgEnemy.imgBullet(x, y, c, hp, i).push(enemy).enemy.bullets.push(Bullet);
 }
 createEnemyBullets();
 
-//End of the game. Want to create an end game now button.
+//Working on the game themes sound.
+function Sound(src) {
+  this.sound = document.createElement("audio");
+  this.sound.src = myMusic = new Sound("backgroundmusic.mp3");
+  this.sound.style.display = "none";
+  document.body.appendChild(this.sound);
+  this.play = function () {
+    this.sound.play();
+  }
+  // this.stop = function(){
+  //this.sound.pause();
+  //}
+}
+
+sound();
+
+//Game thing music
+function startGame() {
+  var myMusic;
+  myMusic = new Sound("backgroundmusic.mp3");
+  myMusic.play();
+  myGameArea.start();
+}
+startGame(myMusic.play());
+
+//End of the game. Want to create an end game now button, plus a few more features as well.
 //function exit() {
 //}
+
+//Notes for creating the next block of code for 
+//the aliens firing randomly, from each row,
+//back at the players ship.
+
+/*cr fctn like shoot protoype of enemy 
+its going to create new bullet
+push that bullet into big array OF bullets
+at and only for one bullet per enemy
+only one shooting
+create the bullet at the bottom at the center of the x and y height of the enemy
+write a set interval that like whatever twice every Sec
+add like 5 to the y value of the bullet 
+
+last piece is:
+go into your main game loop
+loop over the array of bullets
+then draw over while its in the loop
+compile thought logic into js Code when creating the above code, 
+per Verbal Processing Instructions from Software Development Instructor.*/
