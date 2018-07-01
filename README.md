@@ -11,13 +11,13 @@ Aliens Invasion. This game is played with a player ship and multiple aliens. You
 
 The goals
 
-To Build a game that is playable in the browser
-Design patterns for the design and implementation of code
-Use test-driven design to build a client-side application
+To Build a game that is playable in the browser.
+Design readable patterns for the design and implementation of code.
+Use test-driven design to build a client-side application that works in the browser.
 
 Design Approach
 
-The style chosen was inspired by one of my favorite retro games called Galaga.
+The style chosen was inspired by one of my favorite retro games called Space Invaders.
 
 Technical Approach
 
@@ -27,3 +27,4 @@ Our game logic is in a separate file.
 Difficulties
 
 Working on making the aliens fire randomly and frequently, at the players ship, as each level increases.
+Adding game theme sounds for the background music, players ship shooting and sounds for the aliens firing back at the players ship.
